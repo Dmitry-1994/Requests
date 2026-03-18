@@ -8,7 +8,7 @@ load_dotenv()
 token = os.getenv("CITY_TOKEN")
 base_url = os.getenv("CITY_BASE_URL")
 
-def find_uk_city(coordinates:list) -> str:
+def find_uk_city(coordinates: list) -> str:
     favorite_uk_city = {"Leeds", "London", "Liverpool", "Manchester", "Oxford", "Edinburgh", "Norwich", "York"}
     found_cities = []
     for latitude, longitude in coordinates:
@@ -23,10 +23,10 @@ def find_uk_city(coordinates:list) -> str:
             found_cities.append(response)
     return "\n".join(found_cities)
 
-coordinates = [
+_coordinates = [
         ('55.7514952', '37.618153095505875'),
         ('52.3727598', '4.8936041'),
         ('53.4071991', '-2.99168')
     ]
 
-print(find_uk_city(coordinates))
+print(find_uk_city(_coordinates))

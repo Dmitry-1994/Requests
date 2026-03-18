@@ -15,7 +15,7 @@ def translate_word(word):
         "text" : word
     }
 
-    response = requests.get(base_url, params=params)
-    return(response.json()["def"][0]["tr"][0]["text"])
+    response = requests.get(base_url, params=params).json()["def"][0]["tr"][0]["text"]
+    return response
 
 print(translate_word("машина"))
